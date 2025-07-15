@@ -9,7 +9,10 @@ function App() {
     setTasks([...tasks,input])
     setInput('')
   }
- 
+ const handleOnDelete = (indexToRemove)=>{
+  const updateTasks = tasks.filter((task,index)=>index!==indexToRemove)
+  setTasks(updateTasks)
+ }
   return (
     <>
       <h1 className='text-center text-4xl mt-6 text-white'>Welcome to Todo App</h1>
@@ -22,7 +25,7 @@ function App() {
       <h1 className='text-2xl '>Your Todo List are : </h1>
       <ul className=' mt-3'>
         {tasks.map((task,index)=>(
-          <li className='list-disc list-inside' key={index}>{task}</li>
+          <li className='list-disc list-inside' key={index}>{task} <button className='bg-red-500 rounded-2xl p-0.5 ml-3 mt-2 text-white'  onClick={()=>handleOnDelete(index)}>Delete</button></li>
         ))}
       </ul>
       </div>
