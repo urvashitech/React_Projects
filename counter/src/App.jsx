@@ -7,7 +7,7 @@ function App() {
   const [count , setCount] = useState(0)
   const handleOnDecrease = ()=>{
     if (count > 0) {
-      setCount(count-1)
+      setCount(prev=>prev-1)
     } else {
       alert("Number can't go on negative side")
     }
@@ -16,7 +16,7 @@ function App() {
 
   const handleOnIncrease = ()=>{
     if (count>=0) {
-      setCount(count+1)
+      setCount(prev=>prev+1)
     } else {
       alert("Number can't go on negative side")
     }
