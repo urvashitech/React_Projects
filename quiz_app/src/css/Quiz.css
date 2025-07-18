@@ -1,0 +1,66 @@
+.box{
+   width: 640px;
+   margin: auto;
+   margin-top: 150px;
+   background-color: white;
+   color: black;
+   display: flex;
+   flex-direction: column;
+   gap:20px;
+   border-radius:10px;
+   padding:40px 50px;
+}
+.box hr{
+   height:2px;
+   border:none;
+   background: black;
+}
+
+.box h3{
+   font-size:27px;
+   font-weight:500;
+}
+
+.box button{
+   margin:auto;
+   width : 250px;
+   height: 65px;
+   background-color: #553f92;
+   color:white;
+   font-size: 25px;
+   font-weight : 500;
+   border-radius: 8px;
+   cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.option {
+   margin-top: 8px;
+   padding: 12px 20px;
+   border: 2px solid gray;
+   border-radius : 25px;
+   margin: 10 px 0;
+   cursor: pointer;
+   transition: 0.3s ease;
+
+}
+
+.option:hover {
+   background-color : #f0f0f0;
+
+}
+
+.option.selected {
+   background-color: #3b82f6;
+   color: white;
+   border-color : #3b82f6;
+}
+
+.index{
+   margin: auto;
+}

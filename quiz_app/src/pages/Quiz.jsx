@@ -1,32 +1,48 @@
 import React, { useState } from 'react'
+import '../css/Quiz.css'
 import questions from '../questinBank'
 function Quiz() {
     const [currentQ , setCurrentQ] = useState(0)
+    const [selected, setSelected] = useState(null)
+    const [score,setScore] = useState(0)
     const current = questions[currentQ]
-  return (
-    <div className="flex items-center justify-center min-h-screen bg-black">
-  <div className="text-center text-white">
-    <h1 className="text-4xl ">Welcome to Quiz Page</h1>
-    <p className="text-xl mb-4">{current.question}</p>
 
-    <ul className="space-y-4">
-      {current.options.map((opt, index) => (
-        <li key={index} className="flex items-center justify-center space-x-2">
-          <input
-            type="radio"
-            id={`option-${index}`}
-            name="quiz-option"
-            value={opt}
-            className="accent-blue-600 w-5 h-5"
-          />
-          <label htmlFor={`option-${index}`} className="text-lg cursor-pointer">
-            {opt}
-          </label>
+    const handleNextClicked = ()=>{
+      setCurrentQ(prev=>prev+1)
+      setSelected(null)
+    }
+    const handleScore = (op)=>{
+      
+      if (op === current.answer) {
+        setScore(prev=>prev+1)
+        
+      }
+      
+    }
+  return (
+   
+   <div className='box'>
+    <h2>Quiz 🎓</h2>
+    <hr/>
+    <h3>{current.question}</h3>
+    <ul>
+      {current.options.map((op,index)=>(
+        <li
+         key = {index} 
+         className={` option ${selected === index ? 'selected':""}`} 
+         onClick={()=>{setSelected(index); handleScore(op)}}>
+          {op}
         </li>
       ))}
     </ul>
-  </div>
-</div>
+    <button onClick={handleNextClicked}>Next</button>
+
+    <div className='index'> {currentQ+1} of {questions.length} questions
+
+    </div>
+   </div>
+   
+   
   )
 }
 
