@@ -7,12 +7,12 @@ function Home() {
     }
     return(
     <>
-    <div className='text-center mt-12'>
+    <div className='box'>
 
-        <h1 className="text-8xl"> Welcome To The Quiz 🎓</h1>
-        <p className="text-2xl mt-8"> Shall We Start The Test? </p>
-        <button className="bg-red-600 p-1 rounded-xl mt-4" onClick={handleOnClick}> Start </button>
+        <h1 className="heading">Welcome to the Quiz App 🎓</h1>
 
+        <h4 className="para">Shall We Start The Quiz ? </h4>
+        <button onClick={handleOnClick}> Start </button>
     </div>
      
     </>
